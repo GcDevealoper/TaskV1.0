@@ -1,0 +1,139 @@
+
+/* Scrollbar Styling */
+ 
+body.Lightmode ::-webkit-scrollbar-track {
+    background-color: var(--LMain-color);
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+body.Lightmode .SideBarIcon{
+    color: var(--LFift-Color);
+}
+
+body.Lightmode .SideBarIcon.Selected{
+    color:#e61c8c;
+}
+
+
+body.Lightmode{
+	background-color: var(--LSix-Color);
+	color: var(--LFift-Color);
+
+}
+body.Lightmode #SocialLinks{
+    background: var(--LThird-Color);
+}
+
+body.Lightmode #SocialLinks .Links{
+
+    color: var(--LFift-color);
+}
+
+body.Lightmode #SocialLinks .MenuBtn{
+
+    color: var(--LFift-color);
+}
+
+body.Lightmode #Header{
+
+	background-color: var(--LSecond-color);
+}
+
+body.Lightmode #Header .UserProfile{
+
+	background-color: var(--LThird-Color);
+}
+
+body.Lightmode .UserProfile h3{
+
+	color: var(--LFift-color);
+}
+
+body.Lightmode .UserCard{
+    background-color: var(--LMain-color);
+}
+
+body.Lightmode .ContentCard,
+body.Lightmode .ContentCard2{
+
+	background-color: var(--LMain-color);
+	color: var(--LFift-color);
+}
+
+body.Lightmode #Buttons span,
+body.Lightmode .SectionBtn{
+
+    color: var(--LFift-color);
+    border-left: 0px solid var(--LMain-color);
+}
+
+body.Lightmode #MBtn,
+body.Lightmode #AnBtn,
+body.Lightmode #GaBtn,
+body.Lightmode .SectionBtn,
+body.Lightmode .configCards,
+body.Lightmode #CloseForm,
+body.Lightmode .CardsForm #Form input,
+body.Lightmode #AccountsForm input,
+body.Lightmode #TaskForm input{
+	
+    background-color: var(--LSix-Color);
+    color: var(--LFift-color);
+}
+
+body.Lightmode .Doing #DSections{
+ background: var(--LSecond-color);
+}
+
+body.Lightmode .SectionBtn.Selected,
+body.Lightmode #MBtn.Selected,
+body.Lightmode #AnBtn.Selected,
+body.Lightmode #GaBtn.Selected{
+	background: var(--Fourth-Color);
+    color: var(--Fift-Color);
+}
+
+body.Lightmode .DoingCard,
+body.Lightmode .CardAdder,
+body.Lightmode .CardAdderA{
+
+	background: var(--LSecond-color);
+}
+
+body.Lightmode .DoingCard img{
+
+	background-color: var(--LSecond-color);
+
+}
+
+
+
+body.Lightmode .Addbtn{
+    font-size: 60px;
+    color: var(--Fourth-Color);
+    cursor: pointer;
+}
+
+body.Lightmode .ProfileAcount,
+body.Lightmode .CardsForm{
+
+    background: var(--LMain-color);
+}
+
+body.Lightmode .FitButton{
+    background-color: var(--LThird-Color);
+}
+
+body.Lightmode .RoutineHeader{
+    background-color: var(--LMain-color);
+}
+
+body.Lightmode .RoutineHeader.Open{
+    background-color: var(--Fourth-Color);
+    color: #fff;
+}
+
+body.Lightmode .Exercises{
+    background-color: var(--LMain-color)
+}
