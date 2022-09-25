@@ -76,7 +76,8 @@ body.Lightmode .configCards,
 body.Lightmode #CloseForm,
 body.Lightmode .CardsForm #Form input,
 body.Lightmode #AccountsForm input,
-body.Lightmode #TaskForm input{
+body.Lightmode #TaskForm input,
+body.Lightmode .OptionsBtns{
 	
     background-color: var(--LSix-Color);
     color: var(--LFift-color);
