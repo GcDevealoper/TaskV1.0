@@ -103,8 +103,8 @@ Botones.Doing.addEventListener("click", ()=>{
 			Contenedores.Cuentas[index].classList.remove('open');
 			Contenedores.Doing[index].classList.toggle('open');
 			Contenedores.Fitness[index].classList.remove('open');
-		  	formCards.setAttribute("style", "width:60%;height:500px;top:83px")
-		  	cardsForm[index].setAttribute("style", "align-items:normal;")
+		  	formCards.setAttribute("style", "width:60%;height:500px;top:0px")
+		  	cardsForm[index].setAttribute("style", "align-items:center;")
 			secStatus = 3;
 		}
 	}

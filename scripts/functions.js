@@ -1,47 +1,22 @@
 
 function createForm(){
-	//Imagen de fondo
+//Imagen de fondo
 	src = `img/Cover/Manga/${doingStatus}.png`;
 	imageCont = document.createElement("div");
 	imageBg = document.createElement("img");
 	imageBg.setAttribute("src",`${src}`);
 	imageCont.appendChild(imageBg);
-	//Formulario
+
+//Formulario
 	form = document.createElement("form");
 	form.setAttribute("id","Form");
-	// nameLabel = document.createElement("label");
-	// nameLabel.innerText = "Via Image Url"
-	// nameInput = document.createElement("input");
-	// nameInput.setAttribute("type","text");
-	// nameInput.setAttribute("placeholder", "Put the Image Url")
 
 
+//Contenedor de las Opciones
+	Options = document.createElement("div")
+	Options.setAttribute("id", "Options")
 
-	nameLabel2 = document.createElement("label");
-	nameLabel2.innerText = "Via Name"
-	nameInput2 = document.createElement("input");
-	nameInput2.setAttribute("type","text");
-	nameInput2.setAttribute("placeholder", "Put the Image Name")
-	
-	nameLabel1 = document.createElement("label");
-	nameLabel1.innerText = "Photo Name"
-	nameInput1 = document.createElement("input");
-	nameInput1.setAttribute("type","text");
-	nameInput1.setAttribute("placeholder", "Type a name for the image")
-
-
-	nameLabel3 = document.createElement("label");
-	nameLabel3.innerHTML = `
-	  Via File <br>
-	  <input type="file" accept="image/*" class="ImageInput" id="ImageInput" style="margin:5px 0px;display:none;"><br>
-	  <span class="ImageButton">Choose a Image File</span>
-	`
-	// nameInput3 = document.createElement("input");
-	// nameInput3.setAttribute("type","file");
-	// nameInput3.setAttribute("accept", "image/*")
-	// nameInput3.setAttribute("placeholder", "Select a Img File")
-
-	//Botones
+//Botones
 	btnsCont = document.createElement("div");
 	btnsCont.style.display = "flex";
 	btnsCont.style.width = "auto";
@@ -54,42 +29,153 @@ function createForm(){
 	ccBtn.setAttribute("class","hidden");
 	ccBtn.innerText = "Añadir";
 
+	OptionsBtnContainer = document.createElement("div")
+	OptionsBtnContainer.setAttribute("class", "OptionsBtnContainer")
+	OptionsBtnContainer.innerHTML = `
+	  <i class="fa-solid fa-laptop-file OptionsBtns Selected"></i>
+	  <i class="fas fa-file-code OptionsBtns"></i>
+	  </i><i class="fa-solid fa-file-pen OptionsBtns"></i>
+	`
+
 	btnsCont.appendChild(vBtn);
 	btnsCont.appendChild(ccBtn);
-	// form.appendChild(nameLabel);
-	// form.appendChild(nameInput);
-	form.appendChild(nameLabel2);
-	form.appendChild(nameInput2);
-	form.appendChild(nameLabel1);
-	form.appendChild(nameInput1);
-	form.appendChild(nameLabel3);
+	form.appendChild(OptionsBtnContainer)
+	form.appendChild(Options)
 	form.appendChild(btnsCont);
 	//Juntando objetos en el form
 	formCards.appendChild(imageCont);
 	formCards.appendChild(form);
+	ViaFile()
 	
 }
 
+function ViaFile(){
+let OptionsContainer = document.getElementById('Options')
+OptionsContainer.innerHTML = ""
+
+	Photoname = document.createElement("label");
+	Photoname.innerText = "Photo Name"
+	PhotonameInput = document.createElement("input");
+	PhotonameInput.setAttribute("type","text");
+	PhotonameInput.setAttribute("placeholder", "Type a name for the image")
+	PhotonameInput.setAttribute("id", "Photoname")
+
+	PhotoFile = document.createElement("label");
+	PhotoFile.innerHTML = `
+	  <input type="file" accept="image/*" class="ImageInput" id="ImageInput" style="margin:5px 0px;display:none;">
+	  <i class="fa-solid fa-file-image ImageButton"></i>
+	`
+
+	OptionsContainer.appendChild(Photoname)
+	OptionsContainer.appendChild(PhotonameInput)
+	OptionsContainer.appendChild(PhotoFile)
+
+	PhotonameInput.addEventListener("keydown", (e) => {
+		if (e.key == "Enter") {
+			
+			e.preventDefault();
+
+		}
+	});
+}
+
+function ViaUrl(){
+let OptionsContainer = document.getElementById('Options')
+OptionsContainer.innerHTML = ""
+
+	PhotonameLabel = document.createElement("label");
+	PhotonameLabel.innerText = "Photo Name"
+	PhotonameInput = document.createElement("input");
+	PhotonameInput.setAttribute("type","text");
+	PhotonameInput.setAttribute("placeholder", "Type a name for the image")
+	PhotonameInput.setAttribute("id", "Photoname2")
+
+		
+	PhotoUrlLabel = document.createElement("label");
+	PhotoUrlLabel.innerText = "Via Image Url"
+	PhotoUrlInput = document.createElement("input");
+	PhotoUrlInput.setAttribute("type","text");
+	PhotoUrlInput.setAttribute("placeholder", "Put the Image Url")
+	PhotoUrlInput.setAttribute("id", "UrlInput")
+
+	OptionsContainer.appendChild(PhotonameLabel)
+	OptionsContainer.appendChild(PhotonameInput)
+	OptionsContainer.appendChild(PhotoUrlLabel)
+	OptionsContainer.appendChild(PhotoUrlInput)
+
+	PhotonameInput.addEventListener("keydown", (e) => {
+		if (e.key == "Enter") {
+			
+			e.preventDefault();
+
+		}
+	});
+
+	PhotoUrlInput.addEventListener("keydown", (e) => {
+		if (e.key == "Enter") {
+			
+			e.preventDefault();
+
+		}
+	});
+}
+
+function ViaName(){
+let OptionsContainer = document.getElementById('Options')
+OptionsContainer.innerHTML = ""
+
+	VianameLabel = document.createElement("label");
+	VianameLabel.innerText = "Via Name"
+	VianameInput = document.createElement("input");
+	VianameInput.setAttribute("type","text");
+	VianameInput.setAttribute("placeholder", "Type the Image Name")
+	VianameInput.setAttribute("id", "VianameInput")
+
+	OptionsContainer.appendChild(VianameLabel)
+	OptionsContainer.appendChild(VianameInput)
+	
+	VianameInput.addEventListener("keydown", (e) => {
+		if (e.key == "Enter") {
+			
+			e.preventDefault();
+
+		}
+	});
+}
+
 function validarCampos(){
-	ImageName = nameInput1.value//Nombrar la imagen
-	ViaName = nameInput2.value//Elegir la imagen por un nombre guardado
-	ImageInput = document.getElementById('ImageInput')
+	let ImageInput = document.getElementById('ImageInput')
 	
 
 	//Via name guardado
-	if (mangaBook.length == 0 && ImageName.length == 0) {
+	if (OptionStatus == 0) {
+	  let Photoname = document.getElementById('Photoname')
+	  let ImageName = Photoname.value
+	  images[ImageName] = src
+
+     //Via Url
+	}else if (OptionStatus == 1){
+	  let UrlInput = document.getElementById('UrlInput')
+	  let Photoname = document.getElementById('Photoname2')
+	  let ImageName = Photoname.value
+	  mangaBook = UrlInput.value//Url
+	  images[ImageName] = mangaBook
+	  src = images[ImageName]
+	 //Via File
+	}else if (OptionStatus == 2) {
+		let VianameInput = document.getElementById('VianameInput')
+		ViaNames = VianameInput.value//Elegir la imagen por un nombre guardado
 		for (const image in images) {
-		  if (image == ViaName) {
+		  if (image == ViaNames) {
 		  	src = images[image]
 		  	break
 		  }
-    	}
-     //Via Url
-	}else{
-		images[ImageName] = src
+    	}		
 	}
 
+
 	imageBg.setAttribute("src",`${src}`);
+	Photoname.value = "";
 	btnsCont.removeChild(vBtn)
 }
 
@@ -100,6 +186,8 @@ function eraseForm(){
 	mangaBook = "";
 	number = 0;
 }
+
+
 
 //Creando las Cards
 function createCard(){
@@ -139,11 +227,48 @@ let eraseButton = document.querySelectorAll('.eraseCard');
 let carta = document.querySelectorAll('.DoingCard');
 //listener borrar carta
 for(let i=0;i<carta.length;i++){
-	eraseButton[i].addEventListener("click", ()=>{
+	eraseButton[i].addEventListener("click", (e)=>{
 	  carta[i].remove();
-	});
+	  e.stopPropagation()
+	}, false)
 };
+
+let Src
+
+for(let i=0;i<carta.length;i++){
+  carta[i].addEventListener("click", ObtenerUrldeLaCarta)
 }
+
+}
+
+function ObtenerUrldeLaCarta(e) {
+	let Carta = e.target
+	url = Carta.src;
+	//console.log(url)
+	FormParaPreview(url)
+}
+
+function FormParaPreview(url) {
+	let form = document.getElementById('CardsForm')
+	form.setAttribute("style", "width:auto;height:inherit;max-height:80vh;")
+	let PreviewImage = document.createElement('img')
+	PreviewImage.setAttribute("src", `${url}`)
+	PreviewImage.setAttribute("style", "width: 100%;height: 100%;object-fit: contain;object-position:top;")
+	PreviewImage.setAttribute("id", "Preview")
+	form.appendChild(PreviewImage)
+  	cardsForm[0].classList.toggle('open')
+    secStatus = "Preview"
+
+}
+
+function erasePreview(){
+		let form = document.getElementById('CardsForm')
+		let PreviewImage = document.getElementById('Preview')
+		form.setAttribute("style", "width:60%;height:500px;top:0px")
+		form.removeChild(PreviewImage)
+		secStatus = 3
+}
+
 
 //Show Hidden cardButton
 function managCards(){
@@ -214,7 +339,6 @@ function createAccountsForm(){
 	formContainer.appendChild(button)
 
 	formCards.appendChild(formContainer)
-
 }
 
 function createTaskForm() {
@@ -226,7 +350,19 @@ function createTaskForm() {
   <span id="AddTaskButton">Add Task</span>
   `
   formCards.appendChild(formContainer)
+  let TaskInput = document.getElementById('TaskInput')
+  TaskInput.addEventListener("keydown", (e) => {
+	if (e.key == "Enter") {
+		
+		e.preventDefault();
+		cardsForm[0].classList.toggle('open')
+		AddTaskToTheList()
+	  	let eraseTaskBtn = document.getElementById('CloseForm')
+	  	eraseTaskBtn.setAttribute("style", "top:4%")
+		eraseTaskForm
 
+	}
+});
 }
 
 function  eraseTaskForm() {
@@ -264,7 +400,6 @@ function AddTaskToTheList() {
 
 let TodoList = document.getElementById('ListTDo')
 let Input = document.getElementById('TaskInput')
-
 	let li = document.createElement('li')
 	li.setAttribute("class", "Task2")
 	li.innerHTML = `
@@ -280,5 +415,13 @@ function TacharTask(e) {
 	let child = e.target
 	let padre = child.parentNode
 	padre.classList.toggle('Finished')
+}
+
+function resetearSeleccion() {
+let OptionsBtns = document.querySelectorAll('.OptionsBtns')
+
+for (let i=0;i<OptionsBtns.length;i++){
+	OptionsBtns[i].classList.remove('Selected')
+}
 
 }

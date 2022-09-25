@@ -1,37 +1,37 @@
 *{
-	margin:0;
-	padding:0;
-	text-decoration: none;
-	list-style: none;	
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    list-style: none;   
 }
 
 :root{
 
-	/*DarkMode*/
-	--Main-color: #222;
-	--Second-color: #333;
-	--Third-Color: #444;
-	/*--Fourth-Color: #0089ff;*/
-	--Fourth-Color: #e61c8c;
-	--Fift-Color: #fff;
+    /*DarkMode*/
+    --Main-color: #222;
+    --Second-color: #333;
+    --Third-Color: #444;
+    /*--Fourth-Color: #0089ff;*/
+    --Fourth-Color: #e61c8c;
+    --Fift-Color: #fff;
 
-	/*LightMode*/	
-	--LMain-color: #fdfdfd;
-	--LSecond-color: #fff;
-	--LThird-Color: #e1e1e1;
-	--LSix-Color: #dddddd;
-	--LFift-Color: #444;
+    /*LightMode*/   
+    --LMain-color: #fdfdfd;
+    --LSecond-color: #fff;
+    --LThird-Color: #e1e1e1;
+    --LSix-Color: #dddddd;
+    --LFift-Color: #444;
 }
 
 html{
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body{
-	overflow-x: hidden;
-	background-color: var(--Main-color);
-	color: var(--Fift-Color);
-	transition: all 300ms;
+    overflow-x: hidden;
+    background-color: var(--Main-color);
+    color: var(--Fift-Color);
+    transition: all 300ms;
 }
 
 /* Scrollbar Styling */
@@ -53,8 +53,8 @@ body{
 }
 
 ::-webkit-scrollbar-thumb:hover{
-	transition: all 1s;
-	background:#016ac5;
+    transition: all 1s;
+    background:#016ac5;
 }
 
 /*Colors*/
@@ -69,46 +69,46 @@ body{
 /*-------------------------------------------*/
 #Header{
 
-	width: 100%;
-	height: 60px;
-	background-color: var(--Second-color);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-color: var(--Second-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #Header .UserProfile{
 
-	background-color: var(--Third-Color);
-	border-radius: 20px;
-	width: auto;
-	height: 40px;
-	margin-left: 10px;
-	padding-left: 5px;
+    background-color: var(--Third-Color);
+    border-radius: 20px;
+    width: auto;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 5px;
     padding-right: 10px;
 
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 .UserProfile img{
 
-	width: 30px;
-	height: 30px;
-	object-fit: cover;
-	border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .UserProfile h3{
 
-	font-size: 15px;
-	color: var(--Fift-color);
+    font-size: 15px;
+    color: var(--Fift-color);
 }
 
 #SocialLinks{
-	background: var(--Third-Color);
+    background: var(--Third-Color);
     padding: 8px;
     border-radius: 50%;
     width: 12px;
@@ -124,7 +124,7 @@ body{
 
 #SocialLinks .MenuBtn{
 
-	font-size: 25px;
+    font-size: 25px;
     color: var(--Fift-color);
     margin-right: 20px;
     transition: all 300ms;
@@ -134,9 +134,9 @@ body{
 
 #SocialLinks .Links{
 
-	display: none;
-	opacity: 0;
-	color: var(--Fift-color);
+    display: none;
+    opacity: 0;
+    color: var(--Fift-color);
     font-size: 20px;
     margin-right: 10px;
     transform: translateY(3px);
@@ -144,66 +144,67 @@ body{
 
 #SocialLinks.opened .Links{
 
-	display: inline-block;
-	opacity: 1;
-	animation-name: delay-appear;	
-	animation-duration: .6s;
-	animation-timing-function: linear;
+    display: inline-block;
+    opacity: 1;
+    animation-name: delay-appear;   
+    animation-duration: .6s;
+    animation-timing-function: linear;
 
 }
 
 @keyframes delay-appear{
 
-	0%{
-		display: none;
-		opacity: 0;
-	}
+    0%{
+        display: none;
+        opacity: 0;
+    }
 
-	80%{
-		display: none;
-		opacity: 0;
-	}
+    80%{
+        display: none;
+        opacity: 0;
+    }
 
-	100%{
+    100%{
 
-		display: inline-block;
-		opacity: .8;
-	}
+        display: inline-block;
+        opacity: .8;
+    }
 }
 
 #SocialLinks.opened .MenuBtn{
 
-	transform: rotate(0deg) translateX(-4px) translateY(0px);
+    transform: rotate(0deg) translateX(-4px) translateY(0px);
 
 }
 
 
 #SocialLinks.opened{
 
-	width: 130px;
+    width: 130px;
     border-radius: 0%;
 }
 
 /*------------------------*/
 #Main{
 
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	width: 95%;
-	height: auto;
-	margin: 25px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 95%;
+    height: 80vh;
+    margin: 25px auto;
 
 }
 
 #SideBar{
 
-	display: flex;
-	flex-flow: column wrap;
-	align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     min-width: 217px;
-	width: 19%;
-	height: 100%;
+    width: 19%;
+    height: 100%;
+    z-index: 10;
 }
 
 .SideBarIcon{
@@ -220,15 +221,15 @@ body{
 }
 
 #Content{
-	width: 75%;
-	height: auto;
-	overflow: hidden;
+    width: 75%;
+    height: auto;
+    overflow: hidden;
 }
 
 .UserCard{
 
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     gap: 15px;
     width: 65%;
@@ -244,13 +245,13 @@ body{
 
 .UserCard img{
 
-	width: 80px;
-	height: 80px;
-/*	width: 130px;
-	height: 130px;*/
-	object-fit: cover;
-	border-radius: 50%;
-	/*border: 3px solid var(--Fift-color);*/
+    width: 80px;
+    height: 80px;
+/*  width: 130px;
+    height: 130px;*/
+    object-fit: cover;
+    border-radius: 50%;
+    /*border: 3px solid var(--Fift-color);*/
 }
 
 .ListContainer{
@@ -269,40 +270,40 @@ body{
 .ContentCard,.ContentCard2{
 
     min-width: 365px;
-	width: 35%;
+    width: 35%;
     min-height: 454px;
-	height: auto;
-	max-height: 414px;
-	overflow-y: auto;
-	border-radius: 2%;
-	background-color: var(--Main-color);
-	color: var(--Fift-color);
-	padding-bottom: 30px;
+    height: auto;
+    max-height: 414px;
+    overflow-y: auto;
+    border-radius: 2%;
+    background-color: var(--Main-color);
+    color: var(--Fift-color);
+    padding-bottom: 30px;
 
-	display: flex;
-	flex-flow: column nowrap;
-	gap: 20px;
-	padding-left: 20px;
-	padding-top: 20px;
-	font-size: 19px;
-	opacity: 0;
-	visibility: hidden;
-	box-shadow: 0px 1rem 1.5rem rgb(0 0 0 / 50%);
-	/*transform: translateX(120%);*/
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 19px;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0px 1rem 1.5rem rgb(0 0 0 / 50%);
+    /*transform: translateX(120%);*/
     transform: scale(1.13);
     transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .ContentCard.open,
 .ContentCard2.open{
-	opacity: 1;
-	visibility: visible;
+    opacity: 1;
+    visibility: visible;
     z-index: 10;
-	transform: scale(1);
+    transform: scale(1);
 }
 
 #TodoListControls{
-	position: absolute;
+    position: absolute;
     display: flex;
     right: 0;
     margin: 12px 17px;
@@ -310,19 +311,18 @@ body{
 }
 
 #TodoListControls i{
-	color: var(--Fourth-Color);
-	cursor: pointer;
+    color: var(--Fourth-Color);
+    cursor: pointer;
 }
 
 #ListTDo{
-	display: flex;
-	flex-flow: column wrap;
-	gap: 2px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2px;
 }
 
 .Task2{
     width: 97%;
-    cursor: pointer;
 }
 
 .Task{
@@ -352,7 +352,7 @@ body{
 }
 
 .Task > .EraseTask.Open{
-	position: relative;
+    position: relative;
     left: 9px;
     top: -2px;
     color: #fff;
@@ -396,6 +396,13 @@ body{
     transition: all 600ms;
 }
 
+#Options{    
+    width: 100%;
+    gap: 9px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
 #Buttons{
 
     display: flex;
@@ -414,7 +421,7 @@ body{
     padding: 10px;
     padding-left: 15px;
     cursor: pointer;
-	border-left: 0px solid var(--Main-color);
+    border-left: 0px solid var(--Main-color);
     border-radius: 0px;
     transition: all 200ms; 
 }
@@ -426,11 +433,11 @@ body{
 }
 
 .SectionBtn{
-	border-radius: 25px;
+    border-radius: 25px;
 }
 
 #Buttons .SideBtn.Selected{
-	border-left: 6px solid var(--Fourth-Color);
+    border-left: 6px solid var(--Fourth-Color);
     border-radius: 4px;
     transition: all 200ms;
 }
@@ -447,9 +454,9 @@ body{
     padding-top: 4px;
     overflow-y: auto;
 
-	visibility: hidden;
-	opacity: 0;
-	/*transform: translateX(120%);*/
+    visibility: hidden;
+    opacity: 0;
+    /*transform: translateX(120%);*/
     transform: scale(1.13);
     transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
@@ -477,9 +484,9 @@ body{
 }
 
 .ProfileAcount img{
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
 .ProfileAcount span {
@@ -585,10 +592,11 @@ body{
 
 #CloseForm{
     position: absolute;
-    right: 22px;
-    top: 22px;
+    right: 4%;
+    top: 4%;
+    font-size: 2.7vh;
     background: #444;
-    padding: 10px 13px;
+    padding: 1.5vh 1vw;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -601,11 +609,34 @@ body{
     border: none;
     border: 1px solid #ccc9;
     width: auto;
-    margin-top: 11px;
+    margin-top: 7px;
     font-weight: bold;
     visibility: visible;
     cursor: pointer;
     border-radius: 15px;
+}
+
+.OptionsBtns{
+
+    color: var(--Fift-color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 12px;
+    cursor: pointer;
+    background-color:var(--Second-color);
+    border-radius: 25px;
+    transition: all 200ms;
+}
+
+.OptionsBtns.Selected{
+    background-color: var(--Fourth-Color)
+}
+
+.OptionsBtnContainer{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 #AddAccount{
@@ -686,7 +717,7 @@ body{
 
 .Doing{
 
-	position: absolute;
+    position: absolute;
     width: 57%;
     height: 436px;
     display: flex;
@@ -715,7 +746,7 @@ body{
 }
 
 .Doing #DSections{
-	width: 100%;
+    width: 100%;
     height: 70px;
     background: var(--Second-color);
 
@@ -751,8 +782,8 @@ body{
 #MBtn.Selected,
 #AnBtn.Selected,
 #GaBtn.Selected{
-	background: var(--Fourth-Color);
-	transition: all 600ms;
+    background: var(--Fourth-Color);
+    transition: all 600ms;
 }
 
 /*Botones de las cartas*/
@@ -822,7 +853,7 @@ body{
 .DoingCard,
 .CardAdder{
     position: relative;
-	background: var(--Second-color);
+    background: var(--Second-color);
     width: 240px;
     height: 350px;
     border-radius: 5px;
@@ -850,13 +881,14 @@ body{
 .DoingCard img,
 #CardAdder img{
 
-	width: 100%;
-	height: 100%;
-	background-color: var(--Second-color);
-	border-radius: 5px;
-	overflow: hidden;
-	object-fit: cover;
-	object-position: top;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Second-color);
+    border-radius: 5px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
 }
 
 /*
@@ -875,7 +907,7 @@ body{
  .Animes-Series,
  .Games{
 
-	position: absolute;
+    position: absolute;
     width: 100%;
     height: 350px;
     top: 80px;
@@ -884,7 +916,7 @@ body{
     justify-content: flex-start;
     gap: 15px;
     overflow: hidden;
- 	visibility: hidden;
+    visibility: hidden;
     transform: translateX(120%);
     transition: all 1000ms;
 }
@@ -893,7 +925,7 @@ body{
 .Animes-Series.open,
 .Games.open{
 
-	position: absolute;
+    position: absolute;
     width: 100%;
     height: auto;
     top: 80px;
@@ -928,10 +960,10 @@ body{
 }
 
 .FitCont.open{
-	opacity: 1;
-	visibility: visible;
+    opacity: 1;
+    visibility: visible;
     z-index: 10;
-	/*transform: translateX(0px);*/
+    /*transform: translateX(0px);*/
 
 }
 

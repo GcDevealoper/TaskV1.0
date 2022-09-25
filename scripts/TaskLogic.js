@@ -29,6 +29,8 @@ AddTask.addEventListener("click", ()=>{
 	for (let i=0;i<cardsForm.length;i++){
 	  cardsForm[i].classList.add('open');
 	  createTaskForm()
+	  let eraseTaskBtn = document.getElementById('CloseForm')
+	  eraseTaskBtn.setAttribute("style", "top:28%")
 	  resetManag()
 
 		let TaskButton = document.getElementById('AddTaskButton')
@@ -36,7 +38,9 @@ AddTask.addEventListener("click", ()=>{
 			AddTaskToTheList()
 			for (let i=0;i<cardsForm.length;i++){
 		      cardsForm[i].classList.remove('open');
-		      eraseTaskForm
+		      eraseTaskForm	      
+	  		  let eraseTaskBtn = document.getElementById('CloseForm')
+	  		  eraseTaskBtn.setAttribute("style", "top:4%")
 			}
 
 		})

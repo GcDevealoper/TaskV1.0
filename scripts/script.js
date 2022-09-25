@@ -16,6 +16,7 @@ let animeCont = document.querySelectorAll('.Animes-Series');
 let gameCont = document.querySelectorAll('.Games');
 let doingStatus = "manga";
 let sectionBtn = document.querySelectorAll('.SectionBtn');
+let OptionStatus = 0;
 
 //CartasDinamicas
 let doingCards = document.querySelectorAll('.DoingCard');
@@ -43,7 +44,7 @@ const Colors ={
 
 
 UserImage = images['defaulProfile']
-UserName = 'Anonymous'
+UserName = 'GorunDev'
 
 /*Fin de las variables*/
 
@@ -135,8 +136,32 @@ for(let i=0;i<addCardBtn.length;i++){
 			resetManag();
 			let verifyBtn = document.getElementById('Verificar');
 
-			//Llamando Funcion para obtener la Url del archivo del Input File en Watching
-			obtenerUrldelInput()
+			//logica para las secciones
+			let OptionsBtns = document.querySelectorAll('.OptionsBtns')
+
+			for (let i=0;i<OptionsBtns.length;i++){
+				OptionsBtns[i].addEventListener("click", ()=>{
+					resetearSeleccion()
+					OptionsBtns[i].classList.toggle('Selected')
+					if (i == 0) {
+						ViaFile()
+						OptionStatus = 0
+						//Llamando Funcion para obtener la Url del archivo del Input File en Watching
+						obtenerUrldelInput()
+					}else if (i == 1) {
+						ViaUrl()
+						OptionStatus = 1
+					}else if (i == 2) {
+						ViaName()
+						OptionStatus = 2
+					}
+				})
+			}
+
+			if (OptionsBtns[0].classList.contains('Selected')) {
+			  obtenerUrldelInput()	
+			}
+
 
 			//Validando Campos
 			verifyBtn.addEventListener("click", ()=>{
@@ -148,6 +173,7 @@ for(let i=0;i<addCardBtn.length;i++){
 			    createCard();
 			 	cardsForm[i].classList.remove('open');
 				eraseForm();
+				OptionStatus = 0
 			  });
 			});
 		}
@@ -160,13 +186,17 @@ for (let i=0;i<cardsForm.length;i++){
 
     cardsForm[i].classList.toggle('open')
     if (secStatus == 1) {
-      eraseTaskForm()
-    }else if (secStatus === 3) {
+      eraseTaskForm()	      
+	  	  let eraseTaskBtn = document.getElementById('CloseForm')
+	  	  eraseTaskBtn.setAttribute("style", "top:4%")
+    }else if(secStatus == "Preview"){
+   		  erasePreview()
+   	}else if (secStatus === 3) {
       eraseForm()
     }else if (secStatus === 2) {
       eraseAccountsForm()
     }
-
+    OptionStatus = 0
   })
 }
 
@@ -175,13 +205,18 @@ closeBtn.addEventListener("click", ()=>{
 	for(let i=0;i<mangasCont.length;i++){
 		cardsForm[i].classList.remove('open');
 		if (secStatus == 1) {
-     	  eraseTaskForm()
+     	  eraseTaskForm()	      
+	  	  let eraseTaskBtn = document.getElementById('CloseForm')
+	  	  eraseTaskBtn.setAttribute("style", "top:4%")
+   		}else if(secStatus == "Preview"){
+   		  erasePreview()
    		}else if (secStatus === 3) {
 		  eraseForm();
 		}else if (secStatus === 2) {
       	  eraseAccountsForm()
     	}
 	};
+    OptionStatus = 0
 });
 
 formCards.addEventListener("click", (e)=>{
@@ -192,6 +227,4 @@ formCards.addEventListener("click", (e)=>{
 manageCards.addEventListener("click", ()=>{
 	managCards();
 });
-
-
 
