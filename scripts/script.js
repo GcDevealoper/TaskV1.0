@@ -44,7 +44,7 @@ const Colors ={
 
 
 UserImage = images['defaulProfile']
-UserName = 'GorunDev'
+UserName = 'Anonymous'
 
 /*Fin de las variables*/
 
